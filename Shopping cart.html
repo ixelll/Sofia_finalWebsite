@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalGetterGear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+        <a href="Shopping cart.html"><img src="Products/cart.png" width="30px" height="30px"></a>
+        <img src="Products/menu.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+</div>
+
+<!-- Cart Items -->
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Products</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+        <!-- JavaScript to populate cart items -->
+    </table>
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Total:</td>
+                <td id="total">₱0.00</td>
+            </tr>
+        </table>
+        <a href="contact.html" class="btn" onclick="checkout()">Checkout</a>
+        <button class="btn clear-cart" onclick="clearCart()">Clear Cart</button> <!-- Button to clear the cart -->
+    </div>
+</div>
+
+<!-------- footer -------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-base-1">
+                <h3>Download My Apps</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="Products/play-store.png">
+                    <img src="Products/app-store.png">
+                </div>
+            </div>
+            <div class="footer-base-2">
+                <p>Our purpose Is To Sustainability Make the Pleasure and the Benefits of Sport Acccessible to the Many.</p>
+            </div>
+            <div class="footer-base-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affliate</li>
+                </ul>
+            </div>
+            <div class="footer-base-4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/sofiaalexine.castaneda.7" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                    <li><a href="https://x.com/?lang=en" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2023-2024 - Original Shop of GoalGetterGear</p>
+    </div>
+</div>
+<!-----------js for toggle menu----------->
+
+<!-- JavaScript for toggle menu, cart items, and clearing the cart -->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight === "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+
+    // Function to handle adding items to the cart
+    function addToCart(name, price) {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItemIndex = cartItems.findIndex(item => item.name === name);
+        if (existingItemIndex !== -1) {
+            cartItems[existingItemIndex].quantity++;
+        } else {
+            cartItems.push({ name: name, price: price, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        updateCart();
+    }
+
+    // Function to calculate and update the total price
+    function updateTotal() {
+        let total = 0;
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.forEach(item => {
+            total += item.price * item.quantity;
+        });
+        document.getElementById('total').textContent = '₱' + total.toFixed(2);
+    }
+
+    // Function to update cart items in the table
+    function updateCart() {
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartTable = document.querySelector('.cart-page table');
+        while (cartTable.rows.length > 1) {
+            cartTable.deleteRow(1);
+        }
+        cartItems.forEach(item => {
+            const row = cartTable.insertRow(-1);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+            cell1.textContent = item.name;
+            cell2.textContent = '₱' + item.price.toFixed(2);
+            cell3.textContent = item.quantity;
+            cell4.textContent = '₱' + (item.price * item.quantity).toFixed(2);
+        });
+        updateTotal();
+    }
+
+    // Function to clear the cart
+    function clearCart() {
+        localStorage.removeItem('cart');
+        updateCart(); // Update the cart display after clearing
+    }
+
+    // Function to handle checkout
+    function checkout() {
+        // Retrieve cart items from local storage
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Perform checkout process (e.g., send cart items to the server, process payment, etc.)
+        // This is a placeholder for your actual checkout process
+
+        // After checkout is complete, clear the cart
+        clearCart();
+
+        // Optionally, you can redirect the user to a confirmation page
+        window.location.href = 'confirmation.html';
+    }
+
+    // Initial update of the cart
+    updateCart();
+    // Function to handle checkout
+function checkout() {
+    // Retrieve cart items from local storage
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Perform checkout process (e.g., send cart items to the server, process payment, etc.)
+    // This is a placeholder for your actual checkout process
+
+    // After checkout is complete, clear the cart
+    clearCart();
+
+    // Display a message indicating that the order is on the way
+    alert("Your order is on the way! Thank you for shopping with us.");
+
+    // Optionally, you can redirect the user to a confirmation page
+    // window.location.href = 'confirmation.html';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalGetterGear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </nav>
+            <a href="Shopping cart.html"><img src="Products/cart.png" width="30px" height="30px"></a>
+            <img src="Products/menu.png"  class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+    </div>
+
+    <div class="small-container">
+
+        <div class="row">
+            <div class="base-4">
+                <a href="product-details.html"><img src="Products/Product 1.jpg" alt=""></a>
+                <h4>DBTK T-Shirt</h4>
+                <div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+                <p>₱999.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('DBTK T-Shirt', 999.00)">Add to Cart</button>
+            </div>
+            <div class="base-4">
+                <img src="Products/product 2.jpg" alt="">
+                <h4>Air Jordan 1 Mid GS "Black + Red"</h4>
+                <div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+                <p>₱7,000.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('Air Jordan 1 Mid GS Black + Red', 6104.02)">Add to Cart</button>
+            </div>
+            <div class="base-4">
+                <img src="Products/product-3.jpg" alt="">
+                <h4>Jogger pants</h4>
+                <div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+                <p>₱399.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('Jogger pants', 269.00)">Add to Cart</button>
+            </div>
+            <div class="base-4">
+                <img src="Products/product-4.jpg" alt="">
+                <h4>Nouveau Necklace</h4>
+                <div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+                <p>₱2,525.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('Nouveau Necklace', 999.00)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="base-4">
+                <img src="Products/product-5.jpg" alt="">
+                <h4>COOL WATER EAU DE TOILETTE</h4>
+                <div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+                <p>₱2,895.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('COOL WATER EAU DE TOILETTE', 999.00)">Add to Cart</button>
+            </div>
+            <div class="base-4">
+                <img src="Products/product-6.jpg" alt="">
+                <h4>Nike Unisex Everyday Cushion Crew 3 Pair</h4>
+                <div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+                <p>₱1,255.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('Nike Unisex Everyday Cushion Crew 3 Pair', 999.00)">Add to Cart</button>
+            </div>
+            <div class="base-4">
+                <img src="Products/product-7.jpg" alt="">
+                <h4>Dickies Men's Relaxed Straight-fit Cargo Work Pant</h4>
+                <div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+                <p>₱1,599.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('Dickies Men\'s Relaxed Straight-fit Cargo Work Pant', 1358.98)">Add to Cart</button>
+            </div>
+            <div class="base-4">
+                <img src="Products/product-8.jpg" alt="">
+                <h4>Fossil Machine Men's Watch with Stainless Steel</h4>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>₱9,000.00 PHP</p>
+                <button class="btn add-to-cart" onclick="addToCart('Fossil Machine Men\'s Watch with Stainless Steel', 5845.43)">Add to Cart</button>
+            </div>            
+            <div class="row">
+                <div class="base-4">
+                    <img src="Products/product-9.jpg" alt="">
+                    <h4>Rolex Cosmograph Dayotona</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>₱15,209,321.90 PHP</p>
+                    <button class="btn add-to-cart" onclick="addToCart('Rolex Cosmograph Dayotona', 999.00)">Add to Cart</button>
+                </div>
+                <div class="base-4">
+                    <img src="Products/product-10.jpg" alt="">
+                    <h4>DOff-White T-shirt</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>₱400.00 PHP</p>
+                    <button class="btn add-to-cart" onclick="addToCart('DOff-White T-shirt', 400.00)">Add to Cart</button>
+                </div>
+                <div class="base-4">
+                    <img src="Products/product-11.jpg" alt="">
+                    <h4>REEBOK STRIDE RUNNER</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>₱699.00 PHP</p>
+                    <button class="btn add-to-cart" onclick="addToCart('REEBOK STRIDE RUNNER', 999.00)">Add to Cart</button>
+                </div>
+                <div class="base-4">
+                    <img src="Products/product-12.jpg" alt="">
+                    <h4>Nike Jogger pants</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>₱2,999.00 PHP</p>
+                    <button class="btn add-to-cart" onclick="addToCart('Nike Jogger pants', 999.00)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-base-1">
+                    <h3>Download My Apps</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="Products/play-store.png">
+                        <img src="Products/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-base-2">
+                    <p>Our purpose Is To Sustainability Make the Pleasure and the Benefits of Sport Acccessible to the Many.</p>
+                </div>
+                <div class="footer-base-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affliate</li>
+                    </ul>
+                </div>
+                <div class="footer-base-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/sofiaalexine.castaneda.7" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://x.com/?lang=en" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="Copyright">Copyright 2023-2024 - Original Shop of GoalGetterGear</p>
+        </div>
+    </div>
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px") 
+                 {
+                    MenuItems.style.maxHeight = "200px";
+                 } 
+            else 
+                 {
+                    MenuItems.style.maxHeight = "0px";
+                 }
+        }
+    
+        // Function to handle adding items to the cart
+        function addToCart(name, price) {
+            // Retrieve existing cart items from local storage or create an empty array
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the item already exists in the cart
+            const existingItemIndex = cartItems.findIndex(item => item.name === name);
+            if (existingItemIndex !== -1) {
+                // If the item exists, update its quantity
+                cartItems[existingItemIndex].quantity++;
+            } else {
+                // If the item doesn't exist, add it to the cart with quantity 1
+                cartItems.push({ name: name, price: price, quantity: 1 });
+            }
+
+            // Store the updated cart items in local storage
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            // Redirect to the shopping cart page
+            window.location.href = 'Shopping cart.html';
+        }
+    </script>
+
+</body>
+</html>
